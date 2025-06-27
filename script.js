@@ -3,7 +3,7 @@ let currentSection = 0;
 let isVoiceActive = false;
 let isGestureActive = false;
 let lastGestureTime = 0;
-const gestureCooldown = 0;
+const gestureCooldown = 800;
 
 const statusEl = document.getElementById("status");
 const voiceBtn = document.getElementById("voiceToggle");
@@ -49,6 +49,7 @@ recognition.onresult= (event) =>{
     jumpToSection("appointments");
     }else if(command.includes("emergency")){
     jumpToSection("emergency");
+    triggerEmergency();
     }else if(command.includes("enable voice")){
     startVoiceControl();
     }else if(command.includes("disable voice")){
@@ -56,7 +57,7 @@ recognition.onresult= (event) =>{
     }
 };
 //VOICE CONTROL TOGGLE
-voiceBtn.addEventListner("click",toggleVoiceControl);
+voiceBtn.addEventListener("click",toggleVoiceControl);
 function toggleVoiceControl(){
     if(!isVoiceActive){
         startVoiceControl();
@@ -77,13 +78,13 @@ function stopVoiceControl(){
     recognition.stop();
     isVoiceActive = false;
     voiceBtn.classList.remove("active");
-    voiceIndicator.style.display = "none7";
+    voiceIndicator.style.display = "none";
     statusEl.textContent = "Voice: Off";
 }
 
 
 
-function isOpenCvReady(){
+function onOpenCvReady(){
     console.log('OpenCV.js is ready!');
     isOpenCvReady = true;
     motionCanvas.width = 320;
@@ -108,7 +109,7 @@ function processVideo(){
             let maxContour = null;
             for (let i = 0; i < contours.size(); i++){
                 const contour = contours.get(i);
-                const area = cv.contoursArea(contour);
+                const area = cv.contourArea(contour);
                 if (area > maxArea){
                     maxArea = area;
                     maxContour = contour;
@@ -185,7 +186,7 @@ function processVideo(){
                     gestureBtn.classList.add("active");
                     gestureIndicator.style.display = "flex";
                     speak("Gesture control enabled");
-                    statusE1.textContent ="Gestures: Active";
+                    statusEl.textContent = "Gestures: Active";
                     processVideo();
                 };
             })
@@ -260,7 +261,7 @@ function processVideo(){
 
      function resetEmergency(){
         statusEl.textContent = "System Ready";
-        statusEl.style.background =" ";
+        statusEl.style.background ="";
         statusEl.style.color = "";
         document.body.style.animation = "";
      }
@@ -276,7 +277,7 @@ function processVideo(){
      function speak(text) {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 1.0;
-        window.speechSynthesis,speak(utterance);
+        window.speechSynthesis.speak(utterance);
      }
 
      document.addEventListener("DPMContentLoaded", () => {
