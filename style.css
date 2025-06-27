@@ -9,11 +9,45 @@
 .h1{
     margin:0;
     font-weight:600;
+    letter-spacing:0.5px;
 
 }
-
-
-
+.control-panel{
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    margin-top:1rem;
+    flex-wrap:wrap;
+}
+.control-btn{
+    padding:0.75rem 1.5rem;
+    background-color:rgba(255,255,255,0.2);
+    border:2px solid white;
+    color:white;
+    font-size:1rem;
+    border-radius-50px;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+}
+.control-btn:hover{
+    background-color:rgba(255,255,255,0.3);
+    transform:translateY(-2x);
+}
+.control-btn:active{
+    background-color:white;
+    color:var(--primary color);
+    box-shadow :0 0 15px rgba(255,255,255,0.7);
+}
+main{
+    padding:2rem;
+    display:flex;
+    justify-content : center;
+    min-height : calc(100vh-200px);
+}
 
 
 

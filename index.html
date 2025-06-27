@@ -27,15 +27,16 @@ gi
                 <button id="GestureToggle" class="control-btn">
                     <i class= "fas fa-hand-paper">Gesture Control
                 </button>
-               
+            </div>
+        </header>
                 <button id=" emergencybtn" class="emergency-btn">
                 <i class="fas fa-bell"></i> Emergency
                 </button>
-
+            
                 <main>
-                    <div class="data container">
+                    <div class="data-container">
                         <aside class="sidebar">
-                            <div class=" patient-info ">
+                            <div class= "patient-info ">
                                 <img src="https://ui-avatars.com/api/?name=John+Doe&background=005b96&color=fff"" alt="patient" class="patient-avatar" > 
                                 <h3 class="patient-name">patient</h3>
                                 <p class="patient-id">PID-7353760</p>
@@ -61,11 +62,27 @@ gi
                                 </li>
                             </ul>
                         </aside>
+                        <div class="content-area">
+                            <section id="vitals" class="data-section" active></section>
+                            <h2 class="section-header">Patient Vitals</h2>
+                            <div class="data-grid">
+                                <div class="data-card">
+                                    <h3 class="card-title">Heart Rate</h3>
+                                    <p class="card-value">72 <span class="card-unit">BPM</span></p>
+                                    <p class="card-status"><i class="fas fa-check-circle" style="color: var(--success-color);"></i> Normal</p>
+                                </div>
+                                <div class="data-card">
+                                    <h3 class="card-title">Blood Pressure</h3>
+                                    <p class="card-value">118/76 <span class="card-unit">mmHg</span></p>
+                                    <p class="card-status"><i class="fas fa-check-circle" style="color: var(--success-color);"></i>Normal</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </main>
 
             </div>
-        </header>
+        
     </div>
     <script src="script.js"></script>
 </body>
