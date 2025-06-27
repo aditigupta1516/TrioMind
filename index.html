@@ -145,15 +145,65 @@
                                 <p class="history-description">Developed Rash and infection after taking penicillin.</p>
                             </div>
                         </section>
+                        <section id="lab" class="data-section">
+                            <h2 class="section-header">Lab Results</h2>
+                            <div class="data-grid">
+                                <div class="data-card">
+                                    <h3 class="card-title">Haemoglobin A1c</h3>
+                                    <p class="card-value">6.8 <span class="card-unit">%</span></p>
+                                    <p class="card-status"><i class="fas fa-exclamation-triangle" style="color: var(--warning-color)"></i>Elevated</p>
+                                </div>
+                                <div class="data-card">
+                                    <h3 class="card-title" LDL Cholestrol></h3>
+                                    <p class="card-value">110 <span class="card-unit">mg/dL</span></p>
+                                    <p class="card-status"><i class="fas fa-check-circle" style="color: var(--success-color);"></i>Controlled</p>
+                                </div>
+                                <div class="data-card">
+                                    <h3 class="card-title">Creatinine</h3>
+                                    <p class="card-value">1.0 <span class="card-unit">mg/dL</span></p>
+                                    <p class="card-status"><i class="fas fa-check-circle" style="color: var(--success-color);"></i>Normal</p>
+                                </div>
+                                <div class="data-card">
+                                    <h3 class="card-title">WBC Count</h3>
+                                    <p class="card-value">6.5 <span class="card-unit">x10³/µL</span></p>
+                                    <p class="card-status"><i class="fas fa-check-circle" style="color: var(--success-color);"></i>Normal</p>
+                                </div>
+                            </div>
+                        </section>
 
-
-
-
+                        <section id="appointments" class="data-section">
+                            <h2 class="section-header">Upcoming Appointments</h2>
+                            <div class="history-item">
+                                <p class="history-date">may 26, 2024- 10:45 AM</p>
+                                <h3 class="history-diagnosis"> Dr. Supriya Das- Endochronology</h3>
+                                <p class="history-description">Follow up for diabetes management and medication review.</p>
+                            </div>
+                            <div class="history-item">
+                                 <p class="history-date">june 20, 2025- 10:45 AM</p>
+                                <h3 class="history-diagnosis"> Dr. Ankita Shah - Cardiology</h3>
+                                <p class="history-description">Annual Cardiac evaluation and stress test.</p>
+                            </div>
+                        </section>
+                        <section id="emergency" class="data-section">
+                            <h2 class="section-header">Emergency Protocol</h2>
+                            <div class="emergency-card">
+                                <i class="fas fa-bell" style="font-size: 3rem; color: var(--danger-color);"></i>
+                                <h3>Emergency Alert Activated</h3>
+                                <p>Medical team has been notified help is on the way.</p>
+                                <button class="emergency-cancel">Cancel Alert</button>
+                            </div>
+                        </section>
                     </div>
                 </div>
-            
-                            
                 </main>
+                <div id="status">System Ready</div>
+                <div id="gestureIndicator" class="gesture-Indicator">
+                    <i class="fas fa-hand-paper">Gesture Detected: None</i>
+                </div>
+                <div id="voiceIndicator" class="voice-Indicator">
+                    <i class="fas fa-microphone">Listening...</i>
+                </div>
+                <video id="gestureCam" autoplay muted playsinline></video>
 
 
             </div>
