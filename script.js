@@ -57,9 +57,30 @@ recognition.onresult= (event) =>{
     }
 };
 //VOICE CONTROL TOGGLE
-voiceBtn.addEventListner("click",toogleVoiceControl);
+voiceBtn.addEventListner("click",toggleVoiceControl);
+function toggleVoiceControl(){
+    if(!isVoiceActive){
+        startVoiceControl();
+    } else {
+        stopVoiceControl();
+    }
+}
+function startVoiceControl(){
+    recognition.start();
+    isVoiceActive = true;
+    voiceBtn.classList.add("active");
+    voiceIndicator.style.display = "flex";
+    speak("Voice Control Enabled");
+    statusEl.textContent = "Voice: Listening...";
+}
 
-
+function stopVoiceControl(){
+    recognition.stop();
+    isVoiceActive = false;
+    voiceBtn.classList.remove("active");
+    voiceIndicator.style.display = "none7";
+    statusEl.textContent = "Voice: Off";
+}
 
 
 
@@ -113,6 +134,7 @@ function processVideo(){
                             else if(dx <-10){
                                 showGestureFeedback("👈 Swipe Left (Previous)");
                                 navigate(-1);
+                            }
                             } else {
                                 if(dy < -10){
                                     showGestureFeedback("Emergency Activated!");
@@ -141,148 +163,4 @@ function processVideo(){
         gestureIndicator.textContent = text;
         lastGestureTime = Date.now();
     }
-     gestureBtn.addEventListener("click", toggleGestureControl);
-
-    function toggleGestureControl() {
-      if (!isGestureActive) {
-        startGestureControl();
-      } else {
-        stopGestureControl();
-      }
-    }function startGestureControl(){
-        if (navigator.mediaDevices.getUserMedia){
-            navigator.mediaDevices.getUserMedia({video: true, audio: false})
-        }
-         .then(function (mediaStream) {
-            stream = mediaStream;
-            video.srcObject = stream;
-            video.play();
-            
-            // Start processing once video is playing
-            video.onplaying = function() {
-              isGestureActive = true;
-              gestureBtn.classList.add("active");
-              gestureIndicator.style.display = "flex";
-              speak("Gesture control enabled");
-              statusEl.textContent = "Gestures: Active";
-              processVideo();
-            };
-          })
-          .catch(function (err) {
-            console.log("Could not access camera: " + err);
-            gestureIndicator.textContent = "❌ Camera blocked";
-          });
-      } else {
-        alert("Your browser doesn't support camera access");
-      }
-    }
-
-    function stopGestureControl() {
-      if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-        stream = null;
-      }
-      
-      if (prevFrame) {
-        prevFrame.delete();
-        prevFrame = null;
-      }
-      
-      prevCentroid = null;
-      isGestureActive = false;
-      gestureBtn.classList.remove("active");
-      gestureIndicator.style.display = "none";
-      statusEl.textContent = "Gestures: Off";
-    }
-
-
-
-    // ===== NAVIGATION CLICK HANDLERS =====
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const section = item.getAttribute('data-section');
-        jumpToSection(section);
-        
-        // Special handling for emergency section
-        if (section === 'emergency') {
-          triggerEmergency();
-        }
-      });
-    });
-
-    // ===== CORE FUNCTIONS =====
-    function navigate(direction) {
-      currentSection = (currentSection + direction + sections.length) % sections.length;
-      updateSection();
-      speak(`Showing ${sections[currentSection]}`);
-    }
-
-    function jumpToSection(sectionName) {
-      currentSection = sections.indexOf(sectionName);
-      updateSection();
-      speak(`Showing ${sectionName}`);
-    }
-
-    function updateSection() {
-      document.querySelectorAll(".data-section").forEach((el, i) => {
-        el.classList.toggle("active", i === currentSection);
-      });
-      navItems.forEach((item, i) => {
-        item.classList.toggle("active", i === currentSection);
-      });
-    }
-
-    function triggerEmergency() {
-      jumpToSection("emergency");
-      speak("Emergency alert activated! Help is on the way.");
-      statusEl.textContent = "EMERGENCY ALERT!";
-      statusEl.style.backgroundColor = "var(--danger-color)";
-      statusEl.style.color = "white";
-      document.body.style.animation = "emergencyFlash 0.5s infinite";
-      
-    
-      setTimeout(() => {
-        resetEmergency();
-      }, 10000);
-    }
-
-    function resetEmergency() {
-      statusEl.textContent = "System Ready";
-      statusEl.style.backgroundColor = "";
-      statusEl.style.color = "";
-      document.body.style.animation = "";
-    }
-
-
-    if (emergencyCancelBtn) {
-      emergencyCancelBtn.addEventListener("click", resetEmergency);
-    }
-
-    if (emergencyBtn) {
-      emergencyBtn.addEventListener("click", triggerEmergency);
-    }
-
-    function speak(text) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 1.0;
-      window.speechSynthesis.speak(utterance);
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      updateSection();
-      
-      const style = document.createElement("style");
-      style.textContent = `
-        @keyframes emergencyFlash {
-          0%, 100% { background-color: inherit; }
-          50% { background-color: rgba(220, 53, 69, 0.3); }
-        }
-      `;
-      document.head.appendChild(style);
-    });
-
-
-
-
-
 }
