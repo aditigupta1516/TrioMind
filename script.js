@@ -212,7 +212,7 @@ function processVideo(){
         isGestureActive = false;
         gestureBtn.classList.remove("active");
         gestureIndicator.style.display ="none";
-        statusE1.textContent = "Gestures: Off";
+        statusEl.textContent = "Gestures: Off";
     }
 
      navItems.forEach(item => {
@@ -227,13 +227,13 @@ function processVideo(){
      });
 
      function navigate(direction) {
-        currentSection = (currentSection + direction + section.length) % sections.length; 
+        currentSection = (currentSection + direction + sections.length) % sections.length; 
         updateSection();
         speak(`Showing ${sections[currentSection]}`);
      }
 
      function jumpToSection(sectionName) {
-        currentSection = section.indexOf(sectionName);
+        currentSection = sections.indexOf(sectionName);
         updateSection();
         speak(`Showing ${sectionName}`);
      }
@@ -261,7 +261,7 @@ function processVideo(){
 
      function resetEmergency(){
         statusEl.textContent = "System Ready";
-        statusEl.style.background ="";
+        statusEl.style.backgroundColor ="";
         statusEl.style.color = "";
         document.body.style.animation = "";
      }
@@ -280,7 +280,7 @@ function processVideo(){
         window.speechSynthesis.speak(utterance);
      }
 
-     document.addEventListener("DPMContentLoaded", () => {
+     document.addEventListener("DOMContentLoaded", () => {
         updateSection();
 
         const style = document.createElement("style");
