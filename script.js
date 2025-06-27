@@ -3,7 +3,7 @@ let currentSection = 0;
 let isVoiceActive = false;
 let isGestureActive = false;
 let lastGestureTime = 0;
-const gestureCooldown = 0;
+const gestureCooldown = 800;
 
 const statusEl = document.getElementById("status");
 const voiceBtn = document.getElementById("voiceToggle");

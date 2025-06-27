@@ -457,7 +457,7 @@ main{
                             </ul>
                         </aside>
                         <div class="content-area">
-                            <section id="vitals" class="data-section active-section">
+                            <section id="vitals" class="data-section active">
                             <h2 class="section-header">Patient Vitals</h2>
                             <div class="data-grid">
                                 <div class="data-card">
@@ -629,7 +629,7 @@ let currentSection = 0;
 let isVoiceActive = false;
 let isGestureActive = false;
 let lastGestureTime = 0;
-const gestureCooldown = 0;
+const gestureCooldown = 800;
 
 const statusEl = document.getElementById("status");
 const voiceBtn = document.getElementById("voiceToggle");
