@@ -202,7 +202,7 @@
                 </main>
                 <div id="status">System Ready</div>
                 <div id="gestureIndicator" class="gesture-indicator">
-                    <i class="fas fa-hand-paper"></i>Gesture Detected: None</i>
+                    <i class="fas fa-hand-paper"></i>Gesture Detected: None
                 </div>
                 <div id="voiceIndicator" class="voice-indicator">
                     <i class="fas fa-microphone"></i>Listening...</i>
@@ -283,7 +283,7 @@ recognition.onresult= (event) =>{
     }
 };
 //VOICE CONTROL TOGGLE
-voiceBtn.addEventListner("click",toggleVoiceControl);
+voiceBtn.addEventListener("click",toggleVoiceControl);
 function toggleVoiceControl(){
     if(!isVoiceActive){
         startVoiceControl();
@@ -304,7 +304,7 @@ function stopVoiceControl(){
     recognition.stop();
     isVoiceActive = false;
     voiceBtn.classList.remove("active");
-    voiceIndicator.style.display = "none7";
+    voiceIndicator.style.display = "none";
     statusEl.textContent = "Voice: Off";
 }
 
@@ -412,7 +412,7 @@ function processVideo(){
                     gestureBtn.classList.add("active");
                     gestureIndicator.style.display = "flex";
                     speak("Gesture control enabled");
-                    statusE1.textContent ="Gestures: Active";
+                    statusEl.textContent ="Gestures: Active";
                     processVideo();
                 };
             })
@@ -459,7 +459,7 @@ function processVideo(){
      }
 
      function jumpToSection(sectionName) {
-        currentSection = section.indexOf(sectionName);
+        currentSection = sections.indexOf(sectionName);
         updateSection();
         speak(`Showing ${sectionName}`);
      }
@@ -503,10 +503,10 @@ function processVideo(){
      function speak(text) {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 1.0;
-        window.speechSynthesis,speak(utterance);
+        window.speechSynthesis.speak(utterance);
      }
 
-     document.addEventListener("DPMContentLoaded", () => {
+     document.addEventListener("DOMContentLoaded", () => {
         updateSection();
 
         const style = document.createElement("style");
