@@ -29,9 +29,11 @@ const Recognition= new SpeechRecognition();
 recognition.continuous = true;
 recognition.interimResults=false;
 recognition.lang='en-US';
+//VOICE COMMAND PROCESSOR
 recognition.onresult= (event) =>{
     const command = event.results[event.results.length-1][0].transcript.trim().toLowerCase();
     voiceIndicator.textContent= `Heard: ${command}`;
+    //COMMAND ROUTING
     if(command.includes("next")||command.includes("right")){
     navigate(1);
     }else if(command.includes("previous")||command.includes("back")||command.includes("left")){
@@ -44,7 +46,7 @@ recognition.onresult= (event) =>{
     jumpToSection("history");
     }else if(command.includes("lab")){
     jumpToSection("lab");
-    }else if(command.includes("appointments")){
+    }else if(command.includes("appointments")){ 
     jumpToSection("appointments");
     }else if(command.includes("emergency")){
     jumpToSection("emergency");
@@ -54,6 +56,7 @@ recognition.onresult= (event) =>{
     stopVoiceControl();
     }
 };
+//VOICE CONTROL TOGGLE
 voiceBtn.addEventListner("click",toogleVoiceControl);
 
 
