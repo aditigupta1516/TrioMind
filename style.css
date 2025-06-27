@@ -9,9 +9,15 @@
     --danger-color:#dc3545;
 }
 body{
-    
+    font-family:'Segoe UI', Roboto, Oxygen, Ubuntu , Cantarell , sans-serif;
+    background:linear-gradient(135deg,#f5f7fa 0%, #c3cfe2 100%);
+    margin:0;
+    padding:0;
+    color:var(--dark-color);
+    min-height:100vh;
+    overflow-x:hidden;
 }
-.header{
+header{
     background:linear gradient(to right,var(--primary-color),var(--seconday-color));
     color:white;
     padding:1.5rem;
@@ -108,7 +114,7 @@ main{
     height: fit-content;
 }
 .nav-item{
-    padding: 0.8rem,1rem;
+    padding: 0.8rem,0.1rem;
     border-radius: 8px;
     margin-bottom: 0.5rem;
     cursor: pointer;
@@ -239,29 +245,4 @@ main{
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 1rem;
-}
-.history-date{
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0 0 0.5rem;
-}
-.history-diagnosis{
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-    color: var(--primary-color);
-}
-.history-description{
-    margin: 0;
-    line-height: 1.5;
-}
-#status{
-    text-align: center;
-    margin: 1rem auto;
-    padding: 0.8rem;
-    border-radius: 50px;
-    max-width: 300px;
-    font-weight: 500;
-    background-color: rgba(0, 168, 232, 0.1);
-    color: var(--primary-color);
-    transition: all 0.3s ease;
 }
