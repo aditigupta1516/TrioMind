@@ -48,8 +48,33 @@ main{
     justify-content : center;
     min-height : calc(100vh-200px);
 }
-
-
+.patient-info{
+    text-align:center;
+    margin-bottom:1.5rem;
+}
+.patient-avatar{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--secondary-color);
+    margin: 0 auto 1rem;
+}
+.patient-name{
+    font-size:0.9rem;
+    font-weight:600;
+    margin:0.5rem 0;
+}
+.patient-id{
+    font-size:0.9rem;
+    color:#666;
+    margin:0;
+}
+.nav-menu{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
 
 .nav-item:hover{
     background-color: rgba(0,168, 232, 0.1);
