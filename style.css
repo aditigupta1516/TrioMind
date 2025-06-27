@@ -272,9 +272,6 @@ main{
     color:var(--primary-color);
     transition:all 0.3 ease;
 }
-<<<<<<< HEAD
-
-=======
 .gestureCam{
     position:fixed;
      right:20px;
@@ -285,7 +282,6 @@ main{
      z-index:100;
      transform: scaleX(-1);
 }
->>>>>>> 5a300642fe3cbf2155a5aec4ea7325c30ece445a
 .gesture-indicator{
     position:fixed;
     right:20px;
