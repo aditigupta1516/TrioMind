@@ -272,12 +272,16 @@ main{
     color:var(--primary-color);
     transition:all 0.3 ease;
 }
-
-
-
-
-
-
+.gestureCam{
+    position:fixed;
+     right:20px;
+     bottom:200px;
+     border-radius:15px;
+     box-shadow:0 5px 20px rgba(0,0,0,0.2);
+     border:3px solid white;
+     z-index:100;
+     transform: scaleX(-1);
+}
 .gesture-indicator{
     position:fixed;
     right:20px;
