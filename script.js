@@ -28,6 +28,7 @@ let isOpenCvReady = false;
 
 
 
+
 function isOpenCvReady(){
     console.log('OpenCV.js is ready!');
     isOpenCvReady = true;

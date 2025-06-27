@@ -273,11 +273,6 @@ main{
     transition:all 0.3 ease;
 }
 
-
-
-
-
-
 .gesture-indicator{
     position:fixed;
     right:20px;
@@ -304,3 +299,24 @@ main{
     display:none;
     z-index:100;
 }
+.emergency-btn {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.8rem  1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+    z-index: 100;
+    transition: all 0.3 ease;
+}
+
+.emergency-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.5) ;
+}
+
