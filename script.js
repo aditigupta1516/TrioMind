@@ -35,3 +35,21 @@ function isOpenCvReady(){
     motionCanvas.width = 320;
     motionCanvas.height = 240;
 }
+function processVideo(){
+    if(!isGestureActive || !isOpenCvReady) return;
+    try{
+        ctx.drawImage(video, 0, 0, motionCanvas.width, motionCanvas.height);
+        const currentFrame = cv.imread(motionCanvas);
+        const gray = new cv.Mat();
+        cv.cvtColor(currentFrame, gray, cv.COLOR_RGBA2GRAY);
+        if(prevFrame){
+            const diff = new cv.Mat();
+            cv.absdiff(gray, prevFrame, diff);
+            const thresh = new cv.Mat();
+            cv.threshold(diff, thresh, 25, 255, cv.THRESH_BINARY);
+            const contours = new cv.MatVector();
+            const hierarchy = new cv.Mat();
+            cv.findContours(thresh, contours, hierarchy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE);
+        }
+    }
+}
