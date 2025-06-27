@@ -22,7 +22,6 @@ let prevCentroid = null;
 let stream = null;
 let isOpenCvReady = false;
 
-
 //voice control
 const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition= new SpeechRecognition();
