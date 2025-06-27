@@ -1,0 +1,11 @@
+.header{
+    background:linear gradient(to right,var(--primary-color),var(--seconday-color));
+    color:white;
+    padding:1.5rem;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    position:relative;
+}
+.h1{
+
+}
