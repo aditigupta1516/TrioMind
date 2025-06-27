@@ -176,7 +176,7 @@ function processVideo(){
         if (navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({video: true, audio: false})
             .then(function (mediaStream){
-                stream = mediaStream:
+                stream = mediaStream;
                 video.srcObject = stream;
                 video.play();
 
@@ -216,7 +216,7 @@ function processVideo(){
 
      navItems.forEach(item => {
         item.addEventListener('click', () => {
-            const section = item.getAttribute('data-section';
+            const section = item.getAttribute('data-section');
                 jumpToSection(section);
 
                 if (section === 'emergency') {
@@ -266,7 +266,7 @@ function processVideo(){
      }
 
      if (emergencyCancelBtn) {
-        emergencyCancelBtn.addEventListener"("click", resetEmergency);
+        emergencyCancelBtn.addEventListener("click", resetEmergency);
      }
 
      if (emergencyBtn) {
@@ -289,7 +289,7 @@ function processVideo(){
         50% { background-color: rgba(220,53,69,0.3);}
 
         }`;
-        document.head,appendChild(style);
+        document.head.appendChild(style);
      });
 
 
