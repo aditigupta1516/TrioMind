@@ -291,4 +291,16 @@ main{
     display:none;
     z-index:100;
 }
-
+.voice-indicator{
+    position:fixed;
+    left:20px;
+    bottom :20px;
+    background:white;
+    padding:0.8rem 1.2rem;
+    border-radius:50px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    font-weight:600;
+    color:var(--primary-color);
+    display:none;
+    z-index:100;
+}
