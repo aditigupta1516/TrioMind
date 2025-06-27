@@ -162,3 +162,134 @@ function processVideo(){
         gestureIndicator.textContent = text;
         lastGestureTime = Date.now();
     }
+    gestureBtn.addEventListener("click", toggleGestureControl);
+
+    function toggleGestureControl(){
+        if (!isGestureControl){
+            startGestureControl();
+        } else {
+            stopGestureControl();
+        }
+    }
+
+    function startGestureControl() {
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({video: true, audio: false})
+            .then(function (mediaStream){
+                stream = mediaStream:
+                video.srcObject = stream;
+                video.play();
+
+                video.onplaying = function() {
+                    isGestureActive = true;
+                    gestureBtn.classList.add("active");
+                    gestureIndicator.style.display = "flex";
+                    speak("Gesture control enabled");
+                    statusE1.textContent ="Gestures: Active";
+                    processVideo();
+                };
+            })
+            .catch(function (err){
+                console.log("Could not access camera: " + err);
+                gestureIndicator.textContent = "❌ Camera blocked";
+            });
+        } else {
+            alert("Your browser doesn't support camera access");
+        }
+    }
+
+    function stopGestureControl() {
+        if (stream) {
+            stream.getTracks().forEach(track => track.stop());
+            stream = null;
+        }
+        if (prevFrame){
+            prevFrame.delete();
+            prevFrame = null;
+        }
+        prevCentroid = null;
+        isGestureActive = false;
+        gestureBtn.classList.remove("active");
+        gestureIndicator.style.display ="none";
+        statusE1.textContent = "Gestures: Off";
+    }
+
+     navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const section = item.getAttribute('data-section';
+                jumpToSection(section);
+
+                if (section === 'emergency') {
+                    triggerEmergency();
+                }
+        });
+     });
+
+     function navigate(direction) {
+        currentSection = (currentSection + direction + section.length) % sections.length; 
+        updateSection();
+        speak(`Showing ${sections[currentSection]}`);
+     }
+
+     function jumpToSection(sectionName) {
+        currentSection = section.indexOf(sectionName);
+        updateSection();
+        speak(`Showing ${sectionName}`);
+     }
+
+     function updateSection() {
+        document.querySelectorAll(".data-section").forEach((el, i) => {
+            el.classList.toggle("active", i === currentSection);
+        });
+        navItems.forEach((item, i) => {
+            item.classList.toggle("active", i === currentSection);
+        });
+     }
+     function triggerEmergency() {
+        jumpToSection("emergency");
+        speak("Emergency alert activated! Help is on the way.");
+        statusEl.textContent = "EMERGENCY ALERT!";
+        statusEl.style.backgroundColor = "var(--danger-color)";
+        statusEl.style.color = "white";
+        document.body.style.animation = "emergencyFlash 0.5s infinite";
+
+        setTimeout(() => {
+            resetEmergency();
+        }, 1000);
+     }
+
+     function resetEmergency(){
+        statusEl.textContent = "System Ready";
+        statusEl.style.background =" ";
+        statusEl.style.color = "";
+        document.body.style.animation = "";
+     }
+
+     if (emergencyCancelBtn) {
+        emergencyCancelBtn.addEventListener"("click", resetEmergency);
+     }
+
+     if (emergencyBtn) {
+        emergencyBtn.addEventListener("click", triggerEmergency);
+     }
+
+     function speak(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 1.0;
+        window.speechSynthesis,speak(utterance);
+     }
+
+     document.addEventListener("DPMContentLoaded", () => {
+        updateSection();
+
+        const style = document.createElement("style");
+        style.textContent = `
+        @keyframes emergencyFlash {
+        0%, 100% {background-color: inherit; }
+        50% { background-color: rgba(220,53,69,0.3);}
+
+        }`;
+        document.head,appendChild(style);
+     });
+
+
