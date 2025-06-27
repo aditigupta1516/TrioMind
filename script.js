@@ -60,12 +60,40 @@ function processVideo(){
                     maxContour = contour;
                 }
             }
+            //Significant Motion is detected
             if (maxArea>500){
                 const now = Date.now();
                 if(now - lastGestureTime > gestureCooldown){
-                    const moments = cv.moments(maxContour)
-                }
+                    const moments = cv.moments(maxContour);
+                    const cx = moments.m10 / moments.m00;
+                    const cy = moments.m01 / moments.m00;
 
+                    if(prevCentroid){
+                        const dx = cx - prevCentroid.x;
+                        const dy = cy - prevCentroid.y;
+                        if(Math.abs(dx)>Math.abs(dy)){
+                            if(dx>10){
+                                showGestureFeedback("👉 Swipe Right (Next)");
+                                navigate(1);
+                            }
+                            else if(dx <-10){
+                                showGestureFeedback("👈 Swipe Left (Previous)");
+                                navigate(-1);
+                            } else {
+                                if(dy < -10){
+                                    showGestureFeedback("Emergency Activated!");
+                                    jumpToSection("emergency");
+                                    triggerEmergency();
+                                }
+                            }
+                        }
+                        prevCentroid = {x : cx, y : cy};
+                    }
+                }
+                diff.delete();
+                thresh.delete();
+                contours.delete();
+                hierarchy.delete();
 
             }
         }
