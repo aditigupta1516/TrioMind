@@ -1,11 +1,11 @@
+.root{
+    --primary-color:
+    --secondary-color:
+
+}
 body{
     
 }
-
-
-
-
-
 .header{
     background:linear gradient(to right,var(--primary-color),var(--seconday-color));
     color:white;
@@ -60,6 +60,32 @@ main{
     justify-content : center;
     min-height : calc(100vh-200px);
 }
+.patient-info{
+    text-align:center;
+    margin-bottom:1.5rem;
+}
+.patient-avatar{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--secondary-color);
+    margin: 0 auto 1rem;
+}
+.patient-name{
+    font-size:0.9rem;
+    font-weight:600;
+    margin:0.5rem 0;
+}
+.patient-id{
+    font-size:0.9rem;
+    color:#666;
+    margin:0;
+}
+.nav-menu{
+    list-style:none;
+    padding:0;
+    margin:0;
 .data-container{
     width: 90%;
     max-width: 1200px;
