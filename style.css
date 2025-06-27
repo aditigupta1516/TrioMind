@@ -27,7 +27,7 @@
     color: white;
     font-weight: 500;
 }
-/* Emergency nav items */
+
 .nav-item[data-section="emergency"]{
     color: var(--danger-color);
 }
@@ -37,4 +37,105 @@
 }
 .nav-item i{ 
     font-size: 1.1rem;
+}
+
+
+.data-section{
+    display:none;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    animation: fadeIn 0.5s ease;
+}
+
+.data-section.active{
+    display:block;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform: translateY(10px);
+    }
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.section-header{
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+
+}
+.data.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+
+}
+.data.card{
+    background: #f9f8fa;
+    border-radius: 10px;
+    padding: 1.5rem ;
+    border-left: 4px solid var(--seconday-color);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05) ;
+    transition: all 0.3s ease ;
+}
+.data-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.card-title{
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+.card-value{
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--dark-color);
+}
+.card-unit{
+    font-size: 0.9rem;
+    color: #eee;
+}
+
+.medication-list{
+    list-style: none;
+    padding: 0;
+}
+.medication-item{
+    background:#f9f8fa ;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.medication-name{
+    font-weight: 600;
+    margin: 0;
+}
+.medication-details{
+    color: #fff;
+    margin: 0.3rem 0 0;
+    font-size: 0.9rem;
+}
+.medication-time{
+    background: var(--seconday-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    padding: 500;
+}
+.history-item{
+    background: #f9f8fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
 }
