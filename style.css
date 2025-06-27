@@ -1,7 +1,12 @@
 .root{
-    --primary-color:
-    --secondary-color:
-
+    --primary-color:#005b96;
+    --secondary-color:#00a8e8;
+    --accent-color:#ff6b6b;
+    --light-color:#f8f9fa;
+    --dark-color:#212529;
+    --success-color:#28a745;
+    --warning-color:#ffc107;
+    --danger-color:dc3545;
 }
 body{
     
@@ -14,7 +19,7 @@ body{
     box-shadow:0 4px 12px rgba(0,0,0,0.1);
     position:relative;
 }
-.h1{
+h1{
     margin:0;
     font-weight:600;
     letter-spacing:0.5px;
