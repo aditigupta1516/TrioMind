@@ -19,7 +19,7 @@ body{
     overflow-x:hidden;
 }
 header{
-    background:linear-gradient(to right,var(--primary-color),var(--seconday-color));
+    background:linear-gradient(to right,var(--primary-color),var(--secondary-color));
     color:white;
     padding: 1.5rem;
     text-align: center;
@@ -321,7 +321,7 @@ main{
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
     z-index: 100;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 
 .emergency-btn:hover{
@@ -364,7 +364,7 @@ main{
     }
     .gesture-indicator{
         bottom: 170px;
-        right:10px
+        right:10px;
     }
 }
 
