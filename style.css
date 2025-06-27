@@ -272,9 +272,6 @@ main{
     color:var(--primary-color);
     transition:all 0.3 ease;
 }
-<<<<<<< HEAD
-
-=======
 .gestureCam{
     position:fixed;
      right:20px;
@@ -285,7 +282,6 @@ main{
      z-index:100;
      transform: scaleX(-1);
 }
->>>>>>> 5a300642fe3cbf2155a5aec4ea7325c30ece445a
 .gesture-indicator{
     position:fixed;
     right:20px;
@@ -332,4 +328,69 @@ main{
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(220, 53, 69, 0.5) ;
 }
+.emergency-card{
+    text-align: center;
+    padding: 2rem;
+    background: rgba(220, 53, 69, 0.1);
+    border: 2px dashed var(--danger-color);
+    border-radius: 15px;
+}
+.emergency-cancel{
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border:2px solid var(--danger-color);
+    color: var(--danger-color);
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.emergency-cancel.hover{
+    background: var(--danger-color);
+    color: white;
+}
+@media (max-width:768px){
+    .data-container{
+        grid-template-columns: 1fr;
+    }
+    .sidebar{
+        order: -1;
+    }
+    #gestureCam {
+        width: 150px;
+        right: 10px;
+        bottom: 10px;
+    }
+    .gesture-indicator{
+        bottom: 170px;
+        right:10px
+    }
+}
 
+@keyframes emergencyFlash {
+    0%, 100%{background-color: inherit;}
+    50% {background-color: rgba(220, 53, 69, 0.3);}
+}
+.gesture-info{
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    background: rgba(255,255,255,0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 300px;
+    z-index: 100;
+}
+.gesture-info h3{
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.gesture-info ul{
+    padding-left: 20px;
+}
+.gesture-info li{
+    margin-bottom: 8px;
+}
