@@ -1,3 +1,0 @@
-function onOpenCvReady(){
-    console.log
-}
