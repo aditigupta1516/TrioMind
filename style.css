@@ -17,11 +17,7 @@ body{
     min-height:100vh;
     overflow-x:hidden;
 }
-<<<<<<< HEAD
-header{q
-=======
 header{
->>>>>>> 7d8d375746359d23ebb420401d730714308b11da
     background:linear-gradient(to right,var(--primary-color),var(--seconday-color));
     color:white;
     padding:1.5rem;
@@ -275,4 +271,17 @@ main{
     background-color:rgba(0,168,232,0.1);
     color:var(--primary-color);
     transition:all 0.3 ease;
+}
+.gesture-indicator{
+    position:fixed;
+    right:20px;
+    bottom:240px;
+    background:white;
+    padding:0.8rem 1.2rem;
+    border-radius:50px;
+    box-shadow:0 5px 0.5px rgba(0,0,0,0.1);
+    font-weight:600;
+    color:var(--primary-color);
+    display:none;
+    z-index:100;
 }
