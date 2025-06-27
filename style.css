@@ -272,6 +272,12 @@ main{
     color:var(--primary-color);
     transition:all 0.3 ease;
 }
+
+
+
+
+
+
 .gesture-indicator{
     position:fixed;
     right:20px;
@@ -285,3 +291,4 @@ main{
     display:none;
     z-index:100;
 }
+

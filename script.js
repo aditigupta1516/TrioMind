@@ -21,3 +21,16 @@ let prevFrame = null;
 let prevCentroid = null;
 let stream = null;
 let isOpenCvReady = false;
+
+
+
+
+
+
+
+function isOpenCvReady(){
+    console.log('OpenCV.js is ready!');
+    isOpenCvReady = true;
+    motionCanvas.width = 320;
+    motionCanvas.height = 240;
+}
