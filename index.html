@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +11,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app">
+    <div id="app">
         <header>
             <h1>Patient Data Interface</h1>
-            <div class="control-button">
-                <button id="VoiceToggle"  class="control-btn">
+            <div class="control-panel">
+                <button id="voiceToggle"  class="control-btn">
                     <i class="fas fa-microphone"></i>Voice Control
                 </button>
-                <button id="GestureToggle" class="control-btn">
+                <button id="gestureToggle" class="control-btn">
                     <i class= "fas fa-hand-paper"></i>Gesture Control
                 </button>
             </div>
         </header>
-                <button id="emergencybtn" class="emergency-btn">
+                <button id="emergencyBtn" class="emergency-btn">
                 <i class="fas fa-bell"></i> Emergency
                 </button>
             
@@ -31,7 +31,7 @@
                     <div class="data-container">
                         <aside class="sidebar">
                             <div class= "patient-info ">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=005b96&color=fff" alt="patient" class="patient-avatar">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=005b96&color=fff" alt="Patient" class="patient-avatar">
  
                                 <h3 class="patient-name">Jeffry D.</h3>
                                 <p class="patient-id">PID-7353760</p>
@@ -41,8 +41,8 @@
                                 <li class="nav-item active" data-section="vitals">
                                 <i class="fas fa-heartbeat"></i> Vitals
                                 </li>
-                                <li class="nav-item" data-section="medication">
-                                    <i class="fas fa-pill"></i> Medication
+                                <li class="nav-item" data-section="medications">
+                                    <i class="fas fa-pills"></i> Medication
                                 </li>
                                  <li class="nav-item" data-section="history">
                                     <i class="fas fa-history"></i> History
@@ -58,7 +58,7 @@
                             </ul>
                         </aside>
                         <div class="content-area">
-                            <section id="vitals" class="data-section" active>
+                            <section id="vitals" class="data-section active-section">
                             <h2 class="section-header">Patient Vitals</h2>
                             <div class="data-grid">
                                 <div class="data-card">
@@ -101,28 +101,28 @@
                                         <h3 class="medication-name">Gluco-D3</h3>
                                         <p class="medication-details">10mg Tablet for Cholesterol management</p>
                                     </div>
-                                    <span class="medication-item">Morning</span>
+                                    <span class="medication-time">Morning</span>
                                 </li>
                                 <li class="medication-item">
                                     <div>
                                         <h3 class="medication-name">Histamine</h3>
                                         <p class="edication-details">500mg Tablet - For inflammation</p>
                                     </div>
-                                    <span class="medication-item">Evening</span>
+                                    <span class="medication-time">Evening</span>
                                 </li>
                                 <li class="medication-item">
                                     <div>
                                         <h3 class="medication-name">Lisinorphil</h3>
                                         <p class="edication-details">20mg Tablet - For Blood Pressure</p>
                                     </div>
-                                    <span class="medication-item">Morning</span>
+                                    <span class="medication-time">Morning</span>
                                 </li>
                                 <li class="medication-item">
                                     <div>
                                         <h3 class="medication-name">Aspirin</h3>
                                         <p class="edication-details">81mg Tablet - Blood Thinnner</p>
                                     </div>
-                                    <span class="medication-item">Bedtime</span>
+                                    <span class="medication-time">Bedtime</span>
                                 </li>
                             </ul>
                         </section>
@@ -155,7 +155,7 @@
                                 <div class="data-card">
                                     <h3 class="card-title">Haemoglobin A1c</h3>
                                     <p class="card-value">6.8 <span class="card-unit">%</span></p>
-                                    <p class="card-status"><i class="fas fa-exclamation-triangle" style="color: var(--warning-color)"></i>Elevated</p>
+                                    <p class="card-status"><i class="fas fa-exclamation-triangle" style="color: var(--warning-color);"></i>Elevated</p>
                                 </div>
                                 <div class="data-card">
                                     <h3 class="card-title" >LDL Cholestrol</h3>
@@ -201,10 +201,10 @@
                 </div>
                 </main>
                 <div id="status">System Ready</div>
-                <div id="gestureIndicator" class="gesture-Indicator">
+                <div id="gestureIndicator" class="gesture-indicator">
                     <i class="fas fa-hand-paper">Gesture Detected: None</i>
                 </div>
-                <div id="voiceIndicator" class="voice-Indicator">
+                <div id="voiceIndicator" class="voice-indicator">
                     <i class="fas fa-microphone">Listening...</i>
                 </div>
                 <video id="gestureCam" autoplay muted playsinline></video>
