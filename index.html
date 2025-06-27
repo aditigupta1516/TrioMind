@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Data</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app">
+    <div id="app">
         <header>
             <h1>Patient Data Interface</h1>
-            <div class="control-button">
-                <button id="VoiceToggle"  class="control-btn">
+            <div class="control-panel">
+                <button id="voiceToggle"  class="control-btn">
                     <i class="fas fa-microphone"></i>Voice Control
                 </button>
-                <button id="GestureToggle" class="control-btn">
+                <button id="gestureToggle" class="control-btn">
                     <i class= "fas fa-hand-paper"></i>Gesture Control
                 </button>
             </div>
         </header>
-                <button id="emergencybtn" class="emergency-btn">
+                <button id="emergencyBtn" class="emergency-btn">
                 <i class="fas fa-bell"></i> Emergency
                 </button>
             
@@ -30,7 +31,7 @@
                     <div class="data-container">
                         <aside class="sidebar">
                             <div class= "patient-info ">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=005b96&color=fff" alt="patient" class="patient-avatar">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=005b96&color=fff" alt="Patient" class="patient-avatar">
  
                                 <h3 class="patient-name">Jeffry D.</h3>
                                 <p class="patient-id">PID-7353760</p>
@@ -40,8 +41,8 @@
                                 <li class="nav-item active" data-section="vitals">
                                 <i class="fas fa-heartbeat"></i> Vitals
                                 </li>
-                                <li class="nav-item" data-section="medication">
-                                    <i class="fas fa-pill"></i> Medication
+                                <li class="nav-item" data-section="medications">
+                                    <i class="fas fa-pills"></i> Medication
                                 </li>
                                  <li class="nav-item" data-section="history">
                                     <i class="fas fa-history"></i> History

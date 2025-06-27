@@ -56,9 +56,30 @@ recognition.onresult= (event) =>{
     }
 };
 //VOICE CONTROL TOGGLE
-voiceBtn.addEventListner("click",toogleVoiceControl);
+voiceBtn.addEventListner("click",toggleVoiceControl);
+function toggleVoiceControl(){
+    if(!isVoiceActive){
+        startVoiceControl();
+    } else {
+        stopVoiceControl();
+    }
+}
+function startVoiceControl(){
+    recognition.start();
+    isVoiceActive = true;
+    voiceBtn.classList.add("active");
+    voiceIndicator.style.display = "flex";
+    speak("Voice Control Enabled");
+    statusEl.textContent = "Voice: Listening...";
+}
 
-
+function stopVoiceControl(){
+    recognition.stop();
+    isVoiceActive = false;
+    voiceBtn.classList.remove("active");
+    voiceIndicator.style.display = "none7";
+    statusEl.textContent = "Voice: Off";
+}
 
 
 
@@ -112,6 +133,7 @@ function processVideo(){
                             else if(dx <-10){
                                 showGestureFeedback("👈 Swipe Left (Previous)");
                                 navigate(-1);
+                            }
                             } else {
                                 if(dy < -10){
                                     showGestureFeedback("Emergency Activated!");
@@ -140,4 +162,3 @@ function processVideo(){
         gestureIndicator.textContent = text;
         lastGestureTime = Date.now();
     }
-}
