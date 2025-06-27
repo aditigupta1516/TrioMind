@@ -17,11 +17,7 @@ body{
     min-height:100vh;
     overflow-x:hidden;
 }
-<<<<<<< HEAD
-header{q
-=======
 header{
->>>>>>> 7d8d375746359d23ebb420401d730714308b11da
     background:linear-gradient(to right,var(--primary-color),var(--seconday-color));
     color:white;
     padding:1.5rem;
