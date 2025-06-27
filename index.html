@@ -713,7 +713,7 @@ function stopVoiceControl(){
 
 
 
-function isOpenCvReady(){
+function onOpenCvReady(){
     console.log('OpenCV.js is ready!');
     isOpenCvReady = true;
     motionCanvas.width = 320;
@@ -795,7 +795,7 @@ function processVideo(){
     gestureBtn.addEventListener("click", toggleGestureControl);
 
     function toggleGestureControl(){
-        if (!isGestureControl){
+        if (!isGestureActive){
             startGestureControl();
         } else {
             stopGestureControl();
@@ -841,7 +841,7 @@ function processVideo(){
         isGestureActive = false;
         gestureBtn.classList.remove("active");
         gestureIndicator.style.display ="none";
-        statusE1.textContent = "Gestures: Off";
+        statusEl.textContent = "Gestures: Off";
     }
 
      navItems.forEach(item => {
@@ -890,7 +890,7 @@ function processVideo(){
 
      function resetEmergency(){
         statusEl.textContent = "System Ready";
-        statusEl.style.background =" ";
+        statusEl.style.background ="";
         statusEl.style.color = "";
         document.body.style.animation = "";
      }
