@@ -50,6 +50,24 @@ function processVideo(){
             const contours = new cv.MatVector();
             const hierarchy = new cv.Mat();
             cv.findContours(thresh, contours, hierarchy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE);
+            let maxArea = 0;
+            let maxContour = null;
+            for (let i = 0; i < contours.size(); i++){
+                const contour = contours.get(i);
+                const area = cv.contoursArea(contour);
+                if (area > maxArea){
+                    maxArea = area;
+                    maxContour = contour;
+                }
+            }
+            if (maxArea>500){
+                const now = Date.now();
+                if(now - lastGestureTime > gestureCooldown){
+                    const moments = cv.moments(maxContour)
+                }
+
+
+            }
         }
     }
 }
