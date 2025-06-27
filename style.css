@@ -1,0 +1,40 @@
+.header{
+    background:linear gradient(to right,var(--primary-color),var(--seconday-color));
+    color:white;
+    padding:1.5rem;
+    text-align:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    position:relative;
+}
+.h1{
+    margin:0;
+    font-weight:600;
+
+}
+
+
+
+
+
+
+.nav-item:hover{
+    background-color: rgba(0,168, 232, 0.1);
+    transform: translateX(5px);
+}
+
+.nav-item.active{
+    background-color: var(--seconday-color) ;
+    color: white;
+    font-weight: 500;
+}
+/* Emergency nav items */
+.nav-item[data-section="emergency"]{
+    color: var(--danger-color);
+}
+
+.nav-item[data-section="emergency"].active{
+    background-color: var(--danger-color);
+}
+.nav-item i{ 
+    font-size: 1.1rem;
+}
