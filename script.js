@@ -24,8 +24,8 @@ let isOpenCvReady = false;
 
 
 //voice control
-const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition();
-const Recognition= new SpeechRecognition();
+const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition= new SpeechRecognition();
 recognition.continuous = true;
 recognition.interimResults=false;
 recognition.lang='en-US';
@@ -125,8 +125,17 @@ function processVideo(){
                 thresh.delete();
                 contours.delete();
                 hierarchy.delete();
-
             }
+            prevFrame = gray.clone();
+            currentFrame.delete();
+            gray.delete();
+        } catch(err){
+            console.error('Error processing frame: ', err);
         }
+        requestAnimationFrame(processVideo);
+    }
+    function slowGestureFeedback(text){
+        gestureIndicator.textContent = text;
+        lastGestureTime = Date.now();
     }
 }
