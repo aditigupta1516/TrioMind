@@ -6,7 +6,10 @@
     <title>Patient Data</title>
 
 
+
+
     <link rel="stylesheet" href="style.css">
+gi
 </head>
 <body>
     <div class="app">
@@ -20,6 +23,42 @@
                     <i class= "fas fa-hand-paper">Gesture Control
                 </button>
                
+                <button id=" emergencybtn" class="emergency-btn">
+                <i class="fas fa-bell"></i> Emergency
+                </button>
+
+                <main>
+                    <div class="data container">
+                        <aside class="sidebar">
+                            <div class=" patient-info ">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=005b96&color=fff"" alt="patient" class="patient-avatar" > 
+                                <h3 class="patient-name">patient</h3>
+                                <p class="patient-id">PID-7353760</p>
+                            </div>
+
+                            <ul class="nav-menu">
+                                <li class="nav-item active" data-section="vitals">
+                                <i class="fas fa-heartbeat"></i> Vitals
+                                </li>
+                                <li class="nav-item" data-section="medication">
+                                    <i class="fas fa-pill"></i> Medication
+                                </li>
+                                 <li class="nav-item" data-section="history">
+                                    <i class="fas fa-history"></i> History
+                                </li> <li class="nav-item" data-section="lab">
+                                    <i class="fas fa-flask"></i> Lab results
+                                </li>
+                                 <li class="nav-item" data-section="appointments">
+                                    <i class="fas fa-calender-alt"></i> Appointments
+                                </li>
+                                 <li class="nav-item" data-section="emergency">
+                                    <i class="fas fa-bell"></i> Emergency
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                </main>
+
             </div>
         </header>
     </div>
