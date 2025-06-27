@@ -272,3 +272,16 @@ main{
     color:var(--primary-color);
     transition:all 0.3 ease;
 }
+.gesture-indicator{
+    position:fixed;
+    right:20px;
+    bottom:240px;
+    background:white;
+    padding:0.8rem 1.2rem;
+    border-radius:50px;
+    box-shadow:0 5px 0.5px rgba(0,0,0,0.1);
+    font-weight:600;
+    color:var(--primary-color);
+    display:none;
+    z-index:100;
+}
