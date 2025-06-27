@@ -56,7 +56,7 @@ h1{
     background-color:rgba(255,255,255,0.3);
     transform:translateY(-2px);
 }
-.control-btn:active{
+.control-btn.active{
     background-color:white;
     color:var(--primary-color);
     box-shadow :0 0 15px rgba(255,255,255,0.7);
@@ -84,7 +84,7 @@ main{
     margin: 0 auto 1rem;
 }
 .patient-name{
-    font-size:0.9rem;
+    font-size:1.2rem;
     font-weight:600;
     margin:0.5rem 0;
 }
@@ -201,14 +201,14 @@ main{
     font-size: 1rem;
 }
 .card-value{
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin: 0;
     color: var(--dark-color);
 }
 .card-unit{
     font-size: 0.9rem;
-    color: #eee;
+    color: #666;
 }
 
 .medication-list{
@@ -216,7 +216,7 @@ main{
     padding: 0;
 }
 .medication-item{
-    background:#f9f8fa ;
+    background:#f8f9fa ;
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -229,7 +229,7 @@ main{
     margin: 0;
 }
 .medication-details{
-    color: #fff;
+    color: #666;
     margin: 0.3rem 0 0;
     font-size: 0.9rem;
 }
@@ -275,7 +275,7 @@ main{
 .gestureCam{
     position:fixed;
      right:20px;
-     bottom:200px;
+     bottom:20px;
      border-radius:15px;
      box-shadow:0 5px 20px rgba(0,0,0,0.2);
      border:3px solid white;
