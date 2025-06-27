@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,14 +16,14 @@
             <h1>Patient Data Interface</h1>
             <div class="control-button">
                 <button id="VoiceToggle"  class="control-btn">
-                    <i class="fas fa-microphone">Voice Control
+                    <i class="fas fa-microphone"></i>Voice Control
                 </button>
                 <button id="GestureToggle" class="control-btn">
-                    <i class= "fas fa-hand-paper">Gesture Control
+                    <i class= "fas fa-hand-paper"></i>Gesture Control
                 </button>
             </div>
         </header>
-                <button id=" emergencybtn" class="emergency-btn">
+                <button id="emergencybtn" class="emergency-btn">
                 <i class="fas fa-bell"></i> Emergency
                 </button>
             
@@ -28,7 +31,8 @@
                     <div class="data-container">
                         <aside class="sidebar">
                             <div class= "patient-info ">
-                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=005b96&color=fff"" alt="patient" class="patient-avatar" > 
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=005b96&color=fff" alt="patient" class="patient-avatar">
+ 
                                 <h3 class="patient-name">Jeffry D.</h3>
                                 <p class="patient-id">PID-7353760</p>
                             </div>
@@ -46,7 +50,7 @@
                                     <i class="fas fa-flask"></i> Lab results
                                 </li>
                                  <li class="nav-item" data-section="appointments">
-                                    <i class="fas fa-calender-alt"></i> Appointments
+                                    <i class="fas fa-calendar-alt"></i> Appointments
                                 </li>
                                  <li class="nav-item" data-section="emergency">
                                     <i class="fas fa-bell"></i> Emergency
@@ -95,7 +99,7 @@
                                 <li class="medication-item">
                                     <div>
                                         <h3 class="medication-name">Gluco-D3</h3>
-                                        <p class="edication-details">10mg Tablet for Cholesterol management</p>
+                                        <p class="medication-details">10mg Tablet for Cholesterol management</p>
                                     </div>
                                     <span class="medication-item">Morning</span>
                                 </li>
@@ -154,7 +158,7 @@
                                     <p class="card-status"><i class="fas fa-exclamation-triangle" style="color: var(--warning-color)"></i>Elevated</p>
                                 </div>
                                 <div class="data-card">
-                                    <h3 class="card-title" LDL Cholestrol></h3>
+                                    <h3 class="card-title" >LDL Cholestrol</h3>
                                     <p class="card-value">110 <span class="card-unit">mg/dL</span></p>
                                     <p class="card-status"><i class="fas fa-check-circle" style="color: var(--success-color);"></i>Controlled</p>
                                 </div>
