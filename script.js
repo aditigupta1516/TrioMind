@@ -130,14 +130,13 @@ function processVideo(){
                             if(dx>10){
                                 showGestureFeedback("👉 Swipe Right (Next)");
                                 navigate(1);
-                            }
-                            else if(dx <-10){
+                            }else if(dx <-10){
                                 showGestureFeedback("👈 Swipe Left (Previous)");
                                 navigate(-1);
                             }
                             } else {
                                 if(dy < -10){
-                                    showGestureFeedback("Emergency Activated!");
+                                    showGestureFeedback("🆘Emergency Activated!");
                                     jumpToSection("emergency");
                                     triggerEmergency();
                                 }
@@ -264,7 +263,7 @@ function processVideo(){
         statusEl.style.backgroundColor ="";
         statusEl.style.color = "";
         document.body.style.animation = "";
-     }
+     } 
 
      if (emergencyCancelBtn) {
         emergencyCancelBtn.addEventListener("click", resetEmergency);
