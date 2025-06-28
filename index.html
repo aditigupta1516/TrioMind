@@ -784,7 +784,7 @@ function processVideo(){
         }
         requestAnimationFrame(processVideo);
     }
-    function slowGestureFeedback(text){
+    function showGestureFeedback(text){
         gestureIndicator.textContent = text;
         lastGestureTime = Date.now();
     }
@@ -852,7 +852,7 @@ function processVideo(){
      });
 
      function navigate(direction) {
-        currentSection = (currentSection + direction + section.length) % sections.length; 
+        currentSection = (currentSection + direction + sections.length) % sections.length; 
         updateSection();
         speak(`Showing ${sections[currentSection]}`);
      }
