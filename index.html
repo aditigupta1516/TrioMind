@@ -661,23 +661,24 @@ recognition.onresult= (event) =>{
     //COMMAND ROUTING
     if(command.includes("next")||command.includes("right")){
     navigate(1);
-    }else if(command.includes("previous")||command.includes("back")||command.includes("left")){
+    } else if(command.includes("previous")||command.includes("back")||command.includes("left")){
     navigate(-1);
-    }else if(command.includes("vitals")){
+    } else if(command.includes("vitals")){
     jumpToSection("vitals");
-    }else if(command.includes("medication")){
+    } else if(command.includes("medication")){
     jumpToSection("medications");
-    }else if(command.includes("history")){
+    } else if(command.includes("history")){
     jumpToSection("history");
-    }else if(command.includes("lab")){
+    } else if(command.includes("lab") || command.includes("results")){
     jumpToSection("lab");
-    }else if(command.includes("appointments")){ 
+    } else if(command.includes("appointment") || command.includes("schedule")){ 
     jumpToSection("appointments");
-    }else if(command.includes("emergency")){
+    } else if(command.includes("emergency") || command.includes("help")){
     jumpToSection("emergency");
-    }else if(command.includes("enable voice")){
+    triggerEmergency();
+    } else if(command.includes("enable voice")){
     startVoiceControl();
-    }else if(command.includes("disable voice")){
+    } else if(command.includes("disable voice")){
     stopVoiceControl();
     }
 };
