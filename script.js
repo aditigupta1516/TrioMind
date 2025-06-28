@@ -130,14 +130,13 @@ function processVideo(){
                             if(dx>10){
                                 showGestureFeedback("👉 Swipe Right (Next)");
                                 navigate(1);
-                            }
-                            else if(dx <-10){
+                            }else if(dx <-10){
                                 showGestureFeedback("👈 Swipe Left (Previous)");
                                 navigate(-1);
                             }
                             } else {
                                 if(dy < -10){
-                                    showGestureFeedback("Emergency Activated!");
+                                    showGestureFeedback("🆘Emergency Activated!");
                                     jumpToSection("emergency");
                                     triggerEmergency();
                                 }
@@ -159,14 +158,14 @@ function processVideo(){
         }
         requestAnimationFrame(processVideo);
     }
-    function slowGestureFeedback(text){
+    function showGestureFeedback(text){
         gestureIndicator.textContent = text;
         lastGestureTime = Date.now();
     }
     gestureBtn.addEventListener("click", toggleGestureControl);
 
     function toggleGestureControl(){
-        if (!isGestureControl){
+        if (!isGestureActive){
             startGestureControl();
         } else {
             stopGestureControl();
@@ -261,10 +260,10 @@ function processVideo(){
 
      function resetEmergency(){
         statusEl.textContent = "System Ready";
-        statusEl.style.backgroundColor ="";
+        statusEl.style.backgroundColor = "";
         statusEl.style.color = "";
         document.body.style.animation = "";
-     }
+     } 
 
      if (emergencyCancelBtn) {
         emergencyCancelBtn.addEventListener("click", resetEmergency);
@@ -289,7 +288,8 @@ function processVideo(){
         0%, 100% {background-color: inherit; }
         50% { background-color: rgba(220,53,69,0.3);}
 
-        }`;
+        }
+        `;
         document.head.appendChild(style);
      });
 
