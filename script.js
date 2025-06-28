@@ -256,7 +256,7 @@ function processVideo(){
 
         setTimeout(() => {
             resetEmergency();
-        }, 1000);
+        }, 10000);
      }
 
      function resetEmergency(){
