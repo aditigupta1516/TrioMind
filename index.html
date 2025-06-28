@@ -735,7 +735,7 @@ function processVideo(){
             let maxContour = null;
             for (let i = 0; i < contours.size(); i++){
                 const contour = contours.get(i);
-                const area = cv.contoursArea(contour);
+                const area = cv.contourArea(contour);
                 if (area > maxArea){
                     maxArea = area;
                     maxContour = contour;
