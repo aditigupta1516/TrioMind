@@ -158,14 +158,14 @@ function processVideo(){
         }
         requestAnimationFrame(processVideo);
     }
-    function slowGestureFeedback(text){
+    function showGestureFeedback(text){
         gestureIndicator.textContent = text;
         lastGestureTime = Date.now();
     }
     gestureBtn.addEventListener("click", toggleGestureControl);
 
     function toggleGestureControl(){
-        if (!isGestureControl){
+        if (!isGestureActive){
             startGestureControl();
         } else {
             stopGestureControl();
@@ -255,12 +255,12 @@ function processVideo(){
 
         setTimeout(() => {
             resetEmergency();
-        }, 1000);
+        }, 10000);
      }
 
      function resetEmergency(){
         statusEl.textContent = "System Ready";
-        statusEl.style.backgroundColor ="";
+        statusEl.style.backgroundColor = "";
         statusEl.style.color = "";
         document.body.style.animation = "";
      } 
@@ -288,7 +288,8 @@ function processVideo(){
         0%, 100% {background-color: inherit; }
         50% { background-color: rgba(220,53,69,0.3);}
 
-        }`;
+        }
+        `;
         document.head.appendChild(style);
      });
 
